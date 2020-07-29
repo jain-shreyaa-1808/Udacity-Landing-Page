@@ -22,12 +22,9 @@ for(let i=0;i<navcon.length;i++)
     nav.appendChild(elem);
     function activeSectionIndex() {
         let curActive = Array.from(navcon, (i) => isSectionInView(i));
-        //   console.log(`section ${curActive.indexOf(true) + 1}`)
         let activeInd = curActive.indexOf(true);
     
-        //this check below causes issues in mobile view modes on chrome dev tools,
-        //but prevents from having a -1 result in when on top of the page
-        //and beyond the set limit of the sections margins
+        
         if (activeInd < 0) {
           activeInd = 0;
         }
@@ -76,7 +73,6 @@ for(let i=0;i<navcon.length;i++)
         setTimeout(() => {
           //update Active index
           let CurActiveSectionIndex = activeSectionIndex();
-//           console.log(`the active section is ${CurActiveSectionIndex}`);
           updateActive(ActiveSectionIndex, CurActiveSectionIndex);
           ActiveSectionIndex = CurActiveSectionIndex;
     
